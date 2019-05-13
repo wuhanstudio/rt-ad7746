@@ -10,12 +10,12 @@ AD7746::AD7746(uint8_t address)
     devAddr = address;
 }
 
-rt_bool_t AD7746::begin()
+rt_bool_t AD7746::begin(const char* bus_name)
 {
-    i2c_bus = rt_i2c_bus_device_find("i2c2");
+    i2c_bus = rt_i2c_bus_device_find(bus_name);
     if (i2c_bus == RT_NULL)
     {
-        rt_kprintf("[u8g2] Failed to find bus %s\n", "i2c2");
+        rt_kprintf("[AD7746] Failed to find bus %s\n", bus_name);
         return RT_ERROR;
     }
     return RT_EOK;

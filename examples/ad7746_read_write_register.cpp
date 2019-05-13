@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <AD7746.h>
 
+#ifndef AD7746_I2C_NAME
+    #define AD7746_I2C_NAME "i2c2"
+#endif
+
 static unsigned char c[2];
 
 static void ad7746_read(int argc,char *argv[])
@@ -14,7 +18,7 @@ static void ad7746_read(int argc,char *argv[])
     }
     AD7746 ad7746;
     rt_uint8_t addr = atoi(argv[1]);
-    ad7746.begin();
+    ad7746.begin(AD7746_I2C_NAME);
     c[0] = 0;
     c[1] = 0;
     ad7746.read(addr, c, 1);
@@ -31,7 +35,7 @@ static void ad7746_write(int argc,char *argv[])
     }
     AD7746 ad7746;
     rt_uint8_t addr = atoi(argv[1]);
-    ad7746.begin();
+    ad7746.begin(AD7746_I2C_NAME);
     c[0] = atoi(argv[2]);
     c[1] = 0;
     ad7746.write(addr, c, 1);

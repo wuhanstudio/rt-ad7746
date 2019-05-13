@@ -80,7 +80,7 @@ class AD7746 {
         AD7746();
         AD7746(uint8_t address);
 
-        rt_bool_t begin();
+        rt_bool_t begin(const char* bus_name);
         rt_uint8_t reset(); 
 
         // Read from Register

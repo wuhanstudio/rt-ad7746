@@ -2,13 +2,17 @@
 #include <stdlib.h>
 #include <AD7746.h>
 
+#ifndef AD7746_I2C_NAME
+    #define AD7746_I2C_NAME "i2c2"
+#endif
+
 static unsigned char c[2];
 
 static void ad7746_read_temperature(int argc,char *argv[])
 {
     // Initialization
     AD7746 ad7746;
-    ad7746.begin();
+    ad7746.begin(AD7746_I2C_NAME);
 
     // Setup VT
     c[0] = 0x81;
