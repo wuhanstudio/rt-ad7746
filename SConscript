@@ -12,7 +12,7 @@ if GetDepend('AD7746_USING_READ_TEMPERATURE'):
 	src    += Glob('examples/ad7746_read_temperature.cpp')
 
 if GetDepend('AD7746_USING_READ_WRITE'):
-	src    += Glob('examples/ad7746_read_write.cpp')
+	src    += Glob('examples/ad7746_read_write_register.cpp')
 
 if GetDepend('AD7746_USING_READ_CAPACITANCE'):
 	src    += Glob('examples/ad7746_read_capacitance.cpp')
