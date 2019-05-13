@@ -14,6 +14,12 @@ if GetDepend('AD7746_USING_READ_TEMPERATURE'):
 if GetDepend('AD7746_USING_READ_WRITE'):
 	src    += Glob('examples/ad7746_read_write.cpp')
 
+if GetDepend('AD7746_USING_READ_CAPACITANCE'):
+	src    += Glob('examples/ad7746_read_capacitance.cpp')
+
+if GetDepend('AD7746_USING_READ_CAPACITANCE_EXTENSION'):
+	src    += Glob('examples/ad7746_read_capacitance_extension.cpp')
+
 path    = [cwd + '/']
 path   += [cwd + '/src']
 
