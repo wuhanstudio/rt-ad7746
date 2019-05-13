@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <AD7746.h>
 
-unsigned char c[2];
+static unsigned char c[2];
 
 static void ad7746_read_temperature(int argc,char *argv[])
 {

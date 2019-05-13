@@ -90,8 +90,8 @@ class AD7746 {
 
         // Write to Register
         rt_uint8_t write(unsigned char subAddr,
-                        unsigned char* dataBuffer,
-                        unsigned char bytesNumber);
+                         unsigned char* dataBuffer,
+                         unsigned char bytesNumber);
 
         unsigned long getVTData(void);
 

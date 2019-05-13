@@ -6,12 +6,12 @@ static unsigned char c[2];
 
 static void ad7746_read(int argc,char *argv[])
 {
-	  rt_kprintf("%c\n", argc);
+    rt_kprintf("%c\n", argc);
     if(argc < 2)
-		{
-			  rt_kprintf("Usage: ad7746_read [subaddr]\n");
-		    return;
-		}
+    {
+        rt_kprintf("Usage: ad7746_read [subaddr]\n");
+        return;
+    }
     AD7746 ad7746;
     rt_uint8_t addr = atoi(argv[1]);
     ad7746.begin();
@@ -26,8 +26,8 @@ static void ad7746_write(int argc,char *argv[])
 {
     if(argc < 3)
     {
-			  rt_kprintf("Usage: ad7746_write [subaddr] [data] \n");
-		    return;
+        rt_kprintf("Usage: ad7746_write [subaddr] [data] \n");
+        return;
     }
     AD7746 ad7746;
     rt_uint8_t addr = atoi(argv[1]);
